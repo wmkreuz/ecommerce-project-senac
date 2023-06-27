@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
@@ -11,6 +12,9 @@ import { ProdutoComponent } from './produto/produto.component';
 import { LojaComponent } from './loja/loja.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { BlogComponent } from './blog/blog.component';
+import { ProdutoService } from './service/produto.service';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+
 
 @NgModule({
   declarations: [
@@ -21,14 +25,16 @@ import { BlogComponent } from './blog/blog.component';
     ProdutoComponent,
     LojaComponent,
     RodapeComponent,
-    BlogComponent
+    BlogComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     IonicModule.forRoot()
   ],
-  providers: [],
+  providers: [ ProdutoService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

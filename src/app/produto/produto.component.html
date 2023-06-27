@@ -1,0 +1,63 @@
+<!--#Novo-->
+
+<section class="section product" aria-label="product">
+  <div class="container">
+    <h2 class="h2 section-title title text-center">Explore new arrivals</h2>
+    <ul class="product-list has-scrollbar">
+      <ng-container *ngFor="let p of produtos">
+        <li class="scrollbar-item" *ngIf="p.novo==1">
+          <div class="product-card text-center">
+            <div class="card-banner">
+              <figure class="product-banner img-holder" style="--width: 448; --height: 470;">
+                <img src="{{ p.url }}" width="448" height="470" loading="lazy" alt="Short Sleeve Shirt"
+                  class="img-cover">
+              </figure>
+              <a href="#" class="btn product-btn">
+                <ion-icon name="bag" aria-hidden="true"></ion-icon>
+                <span class="span">Add To Cart</span>
+              </a>
+            </div>
+            <div class="card-content">
+              <h3 class="h4 title">
+                <a href="#" class="card-title"> {{ p.nome }} </a>
+              </h3>
+              <span class="price">${{ p.valor }},00</span>
+            </div>
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</section>
+
+<!--#Destaque-->
+<section class="section feature" aria-label="feature-label">
+  <div class="container">
+    <h2 class="h2 section-title title text-center" id="feature-label">Featured products</h2>
+    <ul class="feature-list">
+      <ng-container *ngFor="let p of produtos">
+        <li *ngIf="p.destaque==1">
+          <div class="product-card text-center">
+            <div class="card-banner">
+              <figure class="product-banner img-holder" style="--width: 448; --height: 470;">
+                <img src="{{ p.url }}" width="448" height="470" loading="lazy" alt="Acne Baseball Cap"
+                  class="img-cover">
+              </figure>
+              <a href="#" class="btn product-btn" >
+                <ion-icon name="bag" aria-hidden="true"></ion-icon>
+                <span class="span">Add To Cart</span>
+              </a>
+            </div>
+            <div class="card-content">
+              <h3 class="h3 title">
+                <a href="#" class="card-title"> {{p.nome }}</a>
+              </h3>
+              <span class="price">${{ p.valor }},00</span>
+            </div>
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+    <a href="#" class="btn btn-secondary">View All Products</a>
+  </div>
+</section>
