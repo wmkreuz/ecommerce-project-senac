@@ -1,5 +1,5 @@
-<button class="cart-btn">
-    <ion-icon name="bag" aria-hidden="true"></ion-icon>
+<button class="cart-btn" routerLink="carrinho">
+  <ion-icon name="bag" aria-hidden="true"></ion-icon>
 
-    <span class="span">Cart (02)</span>
-  </button>
+  <span class="span">Cart ({{ carrinhoService.qtdeProdutos }})</span>
+</button>

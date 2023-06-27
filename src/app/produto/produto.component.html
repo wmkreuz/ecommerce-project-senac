@@ -12,10 +12,10 @@
                 <img src="{{ p.url }}" width="448" height="470" loading="lazy" alt="Short Sleeve Shirt"
                   class="img-cover">
               </figure>
-              <a href="#" class="btn product-btn">
+              <button  class="btn product-btn" (click)="adicionarAoCarrinho(p)">
                 <ion-icon name="bag" aria-hidden="true"></ion-icon>
                 <span class="span">Add To Cart</span>
-              </a>
+              </button>
             </div>
             <div class="card-content">
               <h3 class="h4 title">
@@ -43,10 +43,10 @@
                 <img src="{{ p.url }}" width="448" height="470" loading="lazy" alt="Acne Baseball Cap"
                   class="img-cover">
               </figure>
-              <a href="#" class="btn product-btn" >
+              <button  class="btn product-btn" (click)="adicionarAoCarrinho(p)">
                 <ion-icon name="bag" aria-hidden="true"></ion-icon>
                 <span class="span">Add To Cart</span>
-              </a>
+              </button >
             </div>
             <div class="card-content">
               <h3 class="h3 title">

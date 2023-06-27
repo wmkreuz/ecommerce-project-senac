@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { CarrinhoService } from '../service/carrinho.service';
 
 @Component({
-  selector: 'app-carrinho',
-  templateUrl: './carrinho.component.html',
-  styleUrls: ['./carrinho.component.css']
+  selector: 'app-carrinho-detalhe',
+  templateUrl: './carrinho-detalhe.component.html',
+  styleUrls: ['./carrinho-detalhe.component.css']
 })
-export class CarrinhoComponent {
+export class CarrinhoDetalheComponent {
 
   constructor(public carrinhoService: CarrinhoService) { }
 

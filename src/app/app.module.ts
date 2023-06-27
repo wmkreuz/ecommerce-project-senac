@@ -14,6 +14,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { BlogComponent } from './blog/blog.component';
 import { ProdutoService } from './service/produto.service';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { CarrinhoDetalheComponent } from './carrinho-detalhe/carrinho-detalhe.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     LojaComponent,
     RodapeComponent,
     BlogComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    CarrinhoDetalheComponent
   ],
   imports: [
     BrowserModule,

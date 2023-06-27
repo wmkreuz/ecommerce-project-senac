@@ -1,0 +1,30 @@
+<div class="hero">
+    <div class="container">
+        <table id="carrinho-compras-component">
+            <tbody>
+                <tr *ngFor="let item of carrinhoService.carrinho;let i = index;">
+                    <td class="item-dados">
+                        <img class="imagem-icon" [src]="item.url" />
+                        <div>
+                            <p>{{ item.id }} - {{ item.nome }}</p>
+                            <p>{{ item.quantidade }}x {{ item.total }}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="cart-btn" (click)="carrinhoService.excluir(i)">
+                            <ion-icon name="trash" aria-hidden="true"></ion-icon>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" align="right">
+                        <strong class="valor-total">Total: {{ carrinhoService.getValorTotal() }}</strong>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+</div>
