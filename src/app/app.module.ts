@@ -15,6 +15,10 @@ import { BlogComponent } from './blog/blog.component';
 import { ProdutoService } from './service/produto.service';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { CarrinhoDetalheComponent } from './carrinho-detalhe/carrinho-detalhe.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { ClienteService } from './service/cliente.service';
 
 
 @NgModule({
@@ -28,15 +32,18 @@ import { CarrinhoDetalheComponent } from './carrinho-detalhe/carrinho-detalhe.co
     RodapeComponent,
     BlogComponent,
     CarrinhoComponent,
-    CarrinhoDetalheComponent
+    CarrinhoDetalheComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
     IonicModule.forRoot()
   ],
-  providers: [ ProdutoService ],
+  providers: [ ProdutoService, ClienteService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
