@@ -7,6 +7,9 @@ import { CarrinhoDetalheComponent } from './carrinho-detalhe/carrinho-detalhe.co
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LayoutComponent } from './layout/layout.component';
+import { MasterComponent } from './master/master.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { AuthGuard } from './auth.guard.module';
 
 /*const routes: Routes = [
     { path:'', component:HomeComponent},
@@ -16,7 +19,7 @@ import { LayoutComponent } from './layout/layout.component';
     { path:'carrinho', component:CarrinhoDetalheComponent}
   ];*/
 
-  const routes: Routes = [
+  /*const routes: Routes = [
     { path:'', component:LoginComponent},
     { path:'home', component:HomeComponent},
     { path:'register', component:RegisterComponent},
@@ -24,6 +27,22 @@ import { LayoutComponent } from './layout/layout.component';
     { path:'blog', component:BlogComponent},
     { path:'carrinho', component:CarrinhoDetalheComponent},
     { path:'layout', component:LayoutComponent}
+  ];*/
+
+  const routes: Routes = [
+    { path: '', component: LoginComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    {
+        path: 'master',
+        component: MasterComponent, canActivate: [AuthGuard],
+        children: [
+        { path: 'home', component: HomeComponent },
+        { path: 'blog', component: BlogComponent },
+        { path: 'loja', component: LojaComponent },
+        { path: 'carrinho', component: CarrinhoDetalheComponent },
+        ],
+    },
   ];
 
 

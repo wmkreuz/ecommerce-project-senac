@@ -36,6 +36,8 @@
   
     /* border color */
     --border-eerie-black: hsla(0, 0%, 7%, 1);
+
+    --border-eerie-red: rgb(255, 0, 0);
   
     /**
      * TYPOGRAPHY
@@ -68,6 +70,7 @@
     --shadow-1: 0 4px 6px hsla(256, 100%, 9%, 0.1);
     --shadow-2: 4px 4px 0px hsla(0, 0%, 7%, 1);
     --shadow-3: 2px 2px 0px hsla(0, 0%, 7%, 1);
+    --shadow-4: 4px 4px 0px rgb(255, 0, 0);
   
     /**
      * BORDER RADIUS
@@ -476,6 +479,26 @@
     box-shadow: var(--shadow-2);
     padding: 15px 30px;
     border: 2px solid var(--border-eerie-black);
+    margin-block-end: 25px;
+    outline: none;
+    transition: var(--transition-1);
+  }
+
+  .is-valid {
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-2);
+    padding: 15px 30px;
+    border: 2px solid var(--border-eerie-black);
+    margin-block-end: 25px;
+    outline: none;
+    transition: var(--transition-1);
+  }
+
+  .is-invalid {
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-4);
+    padding: 15px 30px;
+    border: 2px solid var(--border-eerie-red);
     margin-block-end: 25px;
     outline: none;
     transition: var(--transition-1);

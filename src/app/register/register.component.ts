@@ -15,6 +15,10 @@ export class RegisterComponent {
   email: string = "";
   senha: string = "";
 
+  public nomeValid: string = '';
+  public emailValid: string = '';
+  public senhaValid: string = '';
+
   constructor( private clienteService: ClienteService ){
 
   }
@@ -28,11 +32,37 @@ export class RegisterComponent {
   }  
 
   salvar(){
-    const index = this.clientes.findIndex(item => item.email === this.email );
-    if (index !== -1) {
-      alert("Email já cadastrado!")
+    this.validacao();
+    if(this.nomeValid == 'is-valid' && this.emailValid == 'is-valid' && this.senhaValid == 'is-valid'){
+      const index = this.clientes.findIndex(item => item.email === this.email );
+      if (index !== -1) {
+        alert("Email já cadastrado!")
+      } else {
+        this.clienteService.salvar(this.nome,this.email,this.senha);
+      }
     } else {
-      this.clienteService.salvar(this.nome,this.email,this.senha);
+      alert('O(s) campo(s) marcado(s) em vermelho são obrigatório(s)!')
+    }
+    
+  }
+
+  validacao(){
+    if(this.nome.trim().length > 0 && this.nome != 'null'){
+      this.nomeValid = 'is-valid';
+    } else {
+      this.nomeValid = 'is-invalid';
+    }
+
+    if(this.email.trim().length > 0 && this.email != 'null'){
+      this.emailValid = 'is-valid';
+    } else {
+      this.emailValid = 'is-invalid';
+    }
+
+    if(this.senha.trim().length > 0 && this.senha != 'null'){
+      this.senhaValid = 'is-valid';
+    } else {
+      this.senhaValid = 'is-invalid';
     }
   }
 

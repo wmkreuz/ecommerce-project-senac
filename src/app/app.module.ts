@@ -19,6 +19,8 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ClienteService } from './service/cliente.service';
+import { MasterComponent } from './master/master.component';
+import { AuthGuard } from './auth.guard.module';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { ClienteService } from './service/cliente.service';
     CarrinhoComponent,
     CarrinhoDetalheComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    MasterComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +45,9 @@ import { ClienteService } from './service/cliente.service';
     HttpClientModule,
     AppRoutingModule,
     IonicModule.forRoot()
+    
   ],
-  providers: [ ProdutoService, ClienteService ],
+  providers: [ ProdutoService, ClienteService, LoginComponent, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
