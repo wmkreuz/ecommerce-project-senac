@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProdutoComponent } from './produto/produto.component';
 import { LojaComponent } from './loja/loja.component';
 import { RodapeComponent } from './rodape/rodape.component';
-import { BlogComponent } from './blog/blog.component';
 import { ProdutoService } from './service/produto.service';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { CarrinhoDetalheComponent } from './carrinho-detalhe/carrinho-detalhe.component';
@@ -21,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { ClienteService } from './service/cliente.service';
 import { MasterComponent } from './master/master.component';
 import { AuthGuard } from './auth.guard.module';
+import { ProdutoDetalheComponent } from './produto-detalhe/produto-detalhe.component';
 
 
 @NgModule({
@@ -32,12 +32,12 @@ import { AuthGuard } from './auth.guard.module';
     ProdutoComponent,
     LojaComponent,
     RodapeComponent,
-    BlogComponent,
     CarrinhoComponent,
     CarrinhoDetalheComponent,
     RegisterComponent,
     LoginComponent,
-    MasterComponent
+    MasterComponent,
+    ProdutoDetalheComponent
   ],
   imports: [
     BrowserModule,

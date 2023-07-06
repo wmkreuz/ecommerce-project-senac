@@ -1,4 +1,4 @@
-<!--#Novo-->
+<!-- #Novo -->
 
 <section class="section product" aria-label="product">
   <div class="container">
@@ -12,14 +12,13 @@
                 <img src="{{ p.url }}" width="448" height="470" loading="lazy" alt="Short Sleeve Shirt"
                   class="img-cover">
               </figure>
-              <button  class="btn product-btn" (click)="adicionarAoCarrinho(p)">
-                <ion-icon name="bag" aria-hidden="true"></ion-icon>
-                <span class="span">Add To Cart</span>
+              <button class="btn product-btn" (click)="detalhar(p)">
+                <span class="span">Details</span>
               </button>
             </div>
             <div class="card-content">
               <h3 class="h4 title">
-                <a href="#" class="card-title"> {{ p.nome }} </a>
+                <a class="card-title"> {{ p.nome }} </a>
               </h3>
               <span class="price">${{ p.valor }},00</span>
             </div>
@@ -30,7 +29,7 @@
   </div>
 </section>
 
-<!--#Destaque-->
+<!-- #Destaque -->
 <section class="section feature" aria-label="feature-label">
   <div class="container">
     <h2 class="h2 section-title title text-center" id="feature-label">Featured products</h2>
@@ -43,14 +42,13 @@
                 <img src="{{ p.url }}" width="448" height="470" loading="lazy" alt="Acne Baseball Cap"
                   class="img-cover">
               </figure>
-              <button  class="btn product-btn" (click)="adicionarAoCarrinho(p)">
-                <ion-icon name="bag" aria-hidden="true"></ion-icon>
-                <span class="span">Add To Cart</span>
+              <button  class="btn product-btn" (click)="detalhar(p)">
+                <span class="span">Details</span>
               </button >
             </div>
             <div class="card-content">
               <h3 class="h3 title">
-                <a href="#" class="card-title"> {{p.nome }}</a>
+                <a  class="card-title"> {{p.nome }}</a>
               </h3>
               <span class="price">${{ p.valor }},00</span>
             </div>

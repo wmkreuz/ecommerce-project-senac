@@ -1,34 +1,21 @@
-  <div class="container">
-
-    <a href="#" class="logo">
-      <img src="assets/images/logo.svg" width="132" height="27" alt="shoppie home">
-    </a>
-
-    <nav class="navbar" data-navbar [ngClass]="status ? 'active' : ''">
-      <ul class="navbar-list">
-
-        <li>
-          <a href="#" class="navbar-link" routerLink="home">Home</a>
-        </li>
-
-        <li>
-          <a href="#" class="navbar-link" routerLink="blog">Blog</a>
-        </li>
-
-        <li>
-          <a class="navbar-link" routerLink="loja">Loja</a>
-        </li>
-
-      </ul>
-
-      <app-carrinho></app-carrinho>
-
-      
-      <button routerLink="/login" class="btn btn-primary" style="display: inline-block;" (click)="logout()">Logout</button>
-    </nav>
-
-    <button class="nav-open-btn" aria-label="toggle menu" data-nav-toggler (click)="addToggle()">
-      <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-    </button>
-
-  </div>
+<div class="container">
+  <a href="#" class="logo">
+    <img src="assets/images/logo.svg" width="132" height="27" alt="shoppie home">
+  </a>
+  <nav class="navbar" data-navbar [ngClass]="status ? 'active' : ''">
+    <ul class="navbar-list">
+      <li>
+        <a href="#" class="navbar-link" routerLink="home">Home</a>
+      </li>
+      <li>
+        <a class="navbar-link" routerLink="loja">Loja</a>
+      </li>
+    </ul>
+    <app-carrinho></app-carrinho>
+    <button routerLink="/login" class="btn btn-primary" style="display: inline-block;"
+      (click)="logout()">Logout</button>
+  </nav>
+  <button class="nav-open-btn" aria-label="toggle menu" data-nav-toggler (click)="addToggle()">
+    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+  </button>
+</div>

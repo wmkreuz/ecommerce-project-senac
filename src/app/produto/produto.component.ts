@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { CarrinhoService } from '../service/carrinho.service';
-//import { Produto } from '../models/produto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-produto',
@@ -12,21 +12,12 @@ export class ProdutoComponent implements OnInit {
 
   produtos: Array<any> = [];
 
-  /*id: number = 0;
-  nome: string = '';
-  valor: number = 0;
-  url: string = '';
-  destaque: number = 0;
-  novo: number = 0;*/
-
   carrinho: Array<any> = [];
 
   public quantidade:number = 1;
-
-  //produto!: Produto;
   
   constructor(private produtoService: ProdutoService, 
-              private carrinhoService: CarrinhoService){}
+              private carrinhoService: CarrinhoService,private router: Router){}
 
   ngOnInit(): void {
     this.listar();
@@ -36,12 +27,7 @@ export class ProdutoComponent implements OnInit {
     this.produtoService.listar().subscribe(dados => this.produtos = dados);
   }
 
-  adicionarAoCarrinho(produto: any): void {
-    //produto = new Produto(this.id, this.nome, this.valor, this.url, this.destaque, this.novo)
-    /*console.log(produto)
-    this.carrinhoService.adicionarProduto(produto);*/
-
-    console.log(produto);
+  /*adicionarAoCarrinho(produto: any): void {
     this.carrinhoService.adicionarProduto({
       "id":produto.id,
       "nome":produto.nome,
@@ -50,6 +36,11 @@ export class ProdutoComponent implements OnInit {
       "quantidade":this.quantidade,
       "total":this.quantidade * parseFloat(produto.valor)
     });
+    
+  }*/
+
+  detalhar(produto: any){
+    this.router.navigate(['/master/produto/',produto.id])
   }
 
 }

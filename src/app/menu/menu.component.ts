@@ -9,21 +9,19 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent {
 
-  constructor( private loginComponent: LoginComponent, private router: Router){
+  constructor(private loginComponent: LoginComponent, private router: Router) {
 
   }
 
   title = 'ecommerce';
-  //Sidebar toggle show hide function
   status = false;
-  addToggle()
-  {
-    this.status = !this.status;       
+  addToggle() {
+    this.status = !this.status;
   }
 
   logout() {
     this.loginComponent.logout();
     this.router.navigate(['/login'])
   }
-  
+
 }

@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../service/cliente.service';
 import { Router } from '@angular/router';
 import { AuthGuard } from '../auth.guard.module';
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   public logado: boolean = false;
 
-  constructor( private clienteService: ClienteService, private router: Router, private authGuard: AuthGuard){
+  constructor(private clienteService: ClienteService, private router: Router, private authGuard: AuthGuard) {
 
   }
 
@@ -28,10 +28,10 @@ export class LoginComponent implements OnInit {
     this.listar();
   }
 
-  login(){
+  login() {
     this.validacao();
-    if(this.emailValid == 'is-valid' && this.senhaValid == 'is-valid'){
-      const index = this.clientes.findIndex(item => (item.email === this.email) && (item.senha === this.senha) );
+    if (this.emailValid == 'is-valid' && this.senhaValid == 'is-valid') {
+      const index = this.clientes.findIndex(item => (item.email === this.email) && (item.senha === btoa(this.senha)));
       console.log(index)
       if (index !== -1) {
         this.router.navigate(['master/home'])
@@ -44,10 +44,10 @@ export class LoginComponent implements OnInit {
     } else {
       alert('O(s) campo(s) marcado(s) em vermelho são obrigatório(s)!')
     }
-    
+
   }
 
-  listar(){
+  listar() {
     this.clienteService.listar().subscribe(dados => this.clientes = dados);
   }
 
@@ -59,23 +59,23 @@ export class LoginComponent implements OnInit {
     return this.logado;
   }
 
-  alterarStatusAuth(){
-    if(this.isAuthenticated() == true){
+  alterarStatusAuth() {
+    if (this.isAuthenticated() == true) {
       this.authGuard.logado = true;
     } else {
       this.authGuard.logado = false;
     }
   }
 
-  validacao(){
-    
-    if(this.email.trim().length > 0 && this.email != 'null'){
+  validacao() {
+
+    if (this.email.trim().length > 0 && this.email != 'null') {
       this.emailValid = 'is-valid';
     } else {
       this.emailValid = 'is-invalid';
     }
 
-    if(this.senha.trim().length > 0 && this.senha != 'null'){
+    if (this.senha.trim().length > 0 && this.senha != 'null') {
       this.senhaValid = 'is-valid';
     } else {
       this.senhaValid = 'is-invalid';

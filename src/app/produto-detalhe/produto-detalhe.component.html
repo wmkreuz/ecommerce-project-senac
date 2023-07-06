@@ -1,0 +1,42 @@
+<section class="section product" aria-label="product">
+  <div class="container">
+
+    <h2 class="h2 section-title title text-center">{{ produto.nome }}</h2>
+
+    <ul class="product-list has-scrollbar">
+
+      <li class="scrollbar-item">
+        <div class="product-card text-center">
+
+          <div class="card-banner">
+
+            <figure class="product-banner img-holder" style="--width: 448; --height: 470;">
+              <img src="{{ produto.url }}" width="448" height="470" loading="lazy" alt="Short Sleeve Shirt"
+                class="img-cover">
+            </figure>
+            <button  class="btn product-btn" (click)="adicionarAoCarrinho(produto)">
+              <ion-icon name="bag" aria-hidden="true"></ion-icon>
+              <span class="span">Add To Cart</span>
+            </button >
+          </div>
+
+          <div class="card-content">
+
+            <span class="price">Price {{ produto.valor }} R$</span>
+
+          </div>
+
+        </div>
+      </li>
+
+      <li class="scrollbar-item">
+        <div >
+          <p class="footer-text">{{ produto.texto }}</p>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+  
+</section>

@@ -10,24 +10,22 @@ export class ClienteService {
 
   constructor(private http: HttpClient) { }
 
-  listar(){
+  listar() {
     return this.http.get<any[]>(`${this.clientesUrl}`);
   }
 
-  salvar(nome: string,email: string,senha: string){
-    
+  salvar(nome: string, email: string, senha: string) {
+
     let bodyData = {
       "nome": nome,
       "email": email,
-      "senha": senha
+      "senha": btoa(senha)
     };
 
-    this.http.post("http://localhost:8080/api/cliente", bodyData, {responseType: 'text'}).subscribe((resultData: any) => 
-    {
-      console.log(resultData);
+    this.http.post("http://localhost:8080/api/cliente", bodyData, { responseType: 'text' }).subscribe((resultData: any) => {
       alert("Cadastro realizado com sucesso!")
     })
-    
+
   }
 
 }

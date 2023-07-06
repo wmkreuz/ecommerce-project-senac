@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-//import { Produto } from '../models/produto';
 
 @Injectable({
   providedIn: 'root'
@@ -15,24 +14,24 @@ export class CarrinhoService {
     this.atualizarProduto(produto, this.carrinho);
   }
 
-  getValorTotal(){
+  getValorTotal() {
     let total = 0;
     this.carrinho.forEach(
-      (produto:any) => {
-        total += produto.quantidade*produto.total;
+      (produto: any) => {
+        total += produto.quantidade * produto.total;
       }
     );
     return total;
   }
 
-  excluir(indice:number){
-    this.carrinho.splice(indice,1);
+  excluir(indice: number) {
+    this.carrinho.splice(indice, 1);
     this.qtdeProdutos = this.carrinho.length;
   }
 
   atualizarProduto(produto: any, carrinho: any[]) {
     const index = carrinho.findIndex(item => item.id === produto.id);
-  
+
     if (index !== -1) {
       carrinho[index].valor += produto.valor;
       carrinho[index].quantidade += produto.quantidade;

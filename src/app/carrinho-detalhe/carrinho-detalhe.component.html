@@ -1,17 +1,23 @@
-<div class="hero">
+<div class="hero" style="background-color: #fffefe;">
     <div class="container">
-        <table id="carrinho-compras-component">
+        <table class="table">
+            <thead>
+                <tr style="color: #162b50; font-size: 25px;">
+                    <th scope="col"></th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Total Item</th>
+                </tr>
+            </thead>
             <tbody>
-                <tr *ngFor="let item of carrinhoService.carrinho;let i = index;">
-                    <td class="item-dados">
-                        <img class="imagem-icon" [src]="item.url" />
-                        <div>
-                            <p>{{ item.id }} - {{ item.nome }}</p>
-                            <p>{{ item.quantidade }}x {{ item.total }}</p>
-                        </div>
-                    </td>
+                <tr *ngFor="let item of carrinhoService.carrinho;let i = index;"
+                    style="text-align: center; font-size: 16px; font-weight: bold; border-bottom: 1px solid black; ">
+                    <td><img style="width: 90px;" class="imagem-icon" [src]="item.url" /></td>
+                    <td>{{ item.nome }}</td>
+                    <td>{{ item.quantidade }}</td>
+                    <td>{{ item.total*item.quantidade }}</td>
                     <td>
-                        <button class="cart-btn" (click)="carrinhoService.excluir(i)">
+                        <button class="" (click)="carrinhoService.excluir(i)">
                             <ion-icon name="trash" aria-hidden="true"></ion-icon>
                         </button>
                     </td>
@@ -25,6 +31,5 @@
                 </tr>
             </tfoot>
         </table>
-
     </div>
 </div>
